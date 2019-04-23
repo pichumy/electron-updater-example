@@ -59,7 +59,7 @@ function sendStatusToWindow(text) {
   win.webContents.send('message', text);
 }
 function createDefaultWindow() {
-  win = new BrowserWindow();
+  win = new BrowserWindow({width: 400, height: 400});
   win.webContents.openDevTools();
   win.on('closed', () => {
     win = null;
@@ -138,5 +138,5 @@ app.on('ready', function()  {
 // autoUpdater.on('download-progress', (progressObj) => {
 // })
 // autoUpdater.on('update-downloaded', (info) => {
-//   autoUpdater.quitAndInstall();  
+//   autoUpdater.quitAndInstall();
 // })

@@ -4,12 +4,24 @@
   <title>Electron Updater Example</title>
 </head>
 <body>
-  Current version: <span id="version">vX.Y.Z</span>
-  <div id="messages"></div>
+  <div class="app">
+    <span id="version">Current version: vX.Y.Z</span>
+    <div id="messages"></div>
+  </div>
+<style>
+.app{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+}
+</style>
 <script>
 // Display the current version
 let version = window.location.hash.substring(1);
-document.getElementById('version').innerText = version;
+document.getElementById('version').innerText = "Current version: " + version;
 
 // Listen for messages
 const {ipcRenderer} = require('electron');
